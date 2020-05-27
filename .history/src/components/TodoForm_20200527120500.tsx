@@ -4,9 +4,9 @@ interface TodoFormProps{
   onAdd(title: string): void
 }
 
-
+const ref = useRef<HTMLInputElement>(null);
 const TodoForm: React.FunctionComponent<TodoFormProps> = (props) => {
-  const ref = useRef<HTMLInputElement>(null);
+
   const KeyPressHandler = (event: React.KeyboardEvent) => {
     if(event.key === 'Enter') {
       props.onAdd(ref.current!.value)
